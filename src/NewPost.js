@@ -15,7 +15,7 @@ const NewPost = ({
           type="text"
           required
           value={postTitle}
-          onChange={setPostTitle(e.target.value)}
+          onChange={(e) => setPostTitle(e.target.value)}
         />
         <label htmlFor="postBody">Post:</label>
         <textarea

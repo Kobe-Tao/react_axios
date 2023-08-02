@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { useParams, Link } from "react-router/cjs/react-router.min";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 const EditPost = ({
   posts,
   handleEdit,

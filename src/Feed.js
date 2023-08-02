@@ -10,4 +10,4 @@ const Feed = ({ posts }) => {
   );
 };
 
-export default a;
+export default Feed;

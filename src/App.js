@@ -7,11 +7,11 @@ import PostPage from "./PostPage";
 import EditPost from "./EditPost";
 import About from "./About";
 import Missing from "./Missing";
-import { Route, Switch, useHistory } from "react-router/cjs/react-router.min";
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
 import api from "./api/posts";
-import { wait } from "@testing-library/user-event/dist/utils";
+
+import { Route, Switch, useHistory } from "react-router-dom";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -21,7 +21,7 @@ function App() {
   const [postBody, setPostBody] = useState("");
   const [editTitle, setEditTitle] = useState("");
   const [editBody, setEditBody] = useState("");
-  const history = useHistory("");
+  const history = useHistory();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -57,7 +57,7 @@ function App() {
     e.preventDefault();
     const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
     const datetime = format(new Date(), "MMMM dd,yyyy pp");
-    const newPost = { id, title, postTitle, datetime, body: postBody };
+    const newPost = { id, postTitle, datetime, body: postBody };
     try {
       const response = await api.post("/posts", newPost);
       const allPosts = [...posts, response.data];
