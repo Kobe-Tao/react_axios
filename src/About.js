@@ -1,9 +1,9 @@
 const About = () => {
   return (
-    <main>
+    <main className="About">
       <h2>About</h2>
       <p style={{ marginTop: "1rem" }}>
-        This blog app is a porject in the learn React tutorial series
+        This blog app is a project in the Learn React tutotial series
       </p>
     </main>
   );
